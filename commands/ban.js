@@ -7,7 +7,12 @@ module.exports.run = async (bot, message, args) => {
         message.mentions.users.first() || message.guild.members.get(args[0])
     );
     if (!bUser) return message.channel.send("Can't find user!");
-    if (!message.member.roles.some((role) => role.name === "Moderator"))
+    if (
+        !(
+            message.member.hasPermission("ADMINISTRATOR") ||
+            message.member.roles.some((role) => role.name === "Moderator")
+        )
+    )
         return message.channel.send("You don't have the permission!");
 
     if (bUser.roles.some((role) => role.name === "Moderator"))

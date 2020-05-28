@@ -16,7 +16,12 @@ module.exports.run = async (bot, message, args) => {
     // let ubUser = bUser;
 
     if (!ubUser) return message.channel.send("Can't find user!");
-    if (!message.member.roles.some((role) => role.name === "Moderator"))
+    if (
+        !(
+            message.member.hasPermission("ADMINISTRATOR") ||
+            message.member.roles.some((role) => role.name === "Moderator")
+        )
+    )
         return message.channel.send("You don't have the permission!");
 
     let ubReason = args.slice(1).join(" ");
