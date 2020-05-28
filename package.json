@@ -1,0 +1,17 @@
+{
+    "name": "zen-bot",
+    "version": "1.0.0",
+    "description": "Moderation Bot for The Zen Serenity.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "author": "Purhan",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^11.6.4",
+        "fs": "0.0.1-security",
+        "ms": "^2.1.2"
+    }
+}
