@@ -4,14 +4,20 @@
     "description": "Moderation Bot for The Zen Serenity.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js"
+        "test": "concurrently \"npm run open\" \"npm start \" ",
+        "start": "node index.js",
+        "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/\""
     },
     "author": "Purhan",
     "license": "ISC",
     "dependencies": {
         "discord.js": "^11.6.4",
+        "express": "^4.17.1",
         "fs": "0.0.1-security",
         "ms": "^2.1.2"
+    },
+    "devDependencies": {
+        "concurrently": "^5.2.0",
+        "http-server": "^0.12.3"
     }
 }
