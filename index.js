@@ -50,6 +50,8 @@ bot.on("message", async (message) => {
 
 bot.login(config.token);
 
+app.set('view engine', 'html');
+
 app.listen(PORT, () => {
     console.log(`Server running at port: ${PORT}`);
 });
