@@ -74,6 +74,8 @@ module.exports.run = async (bot, message, args) => {
         .addField("Duration", mutetime)
         .addField("Reason", reason);
 
+    let sChannel = message.guild.channels.find((c) => c.name === "mod-logs");
+    sChannel.send(embed);
     //end of create roles
     // if (muteunit === "h") mutetime = mutetime * 3600000;
     // if (muteunit === "m")
