@@ -49,9 +49,9 @@ module.exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
         .setDescription("~Unmute~")
         .setColor("#e56b00")
-        .addField("muted User", `${unmutee} with ID ${unmutee.id}`)
+        .addField("Unmuted User", `${unmutee} with ID ${unmutee.id}`)
         .addField(
-            "Kicked By",
+            "Unmuted By",
             `<@${message.author.id}> with ID ${message.author.id}`
         )
         .addField("Time", message.createdAt)

@@ -62,6 +62,18 @@ module.exports.run = async (bot, message, args) => {
         }
     }
 
+    let embed = new Discord.RichEmbed()
+        .setDescription("~Mute~")
+        .setColor("#e56b00")
+        .addField("Muted User", `${tomute} with ID ${tomute.id}`)
+        .addField(
+            "Muted By",
+            `<@${message.author.id}> with ID ${message.author.id}`
+        )
+        .addField("Time", message.createdAt)
+        .addField("Duration", mutetime)
+        .addField("Reason", reason);
+
     //end of create roles
     // if (muteunit === "h") mutetime = mutetime * 3600000;
     // if (muteunit === "m")

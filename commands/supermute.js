@@ -55,7 +55,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("#e56b00")
         .addField("Muted User", `${mutee} with ID ${mutee.id}`)
         .addField(
-            "Kicked By",
+            "Muted By",
             `<@${message.author.id}> with ID ${message.author.id}`
         )
         .addField("Time", message.createdAt)
