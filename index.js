@@ -7,12 +7,9 @@ bot.commands = new Discord.Collection();
 var express = require("express");
 var app = express();
 
-const PORT = process.env.PORT || 8080;
+const token = process.env.TOKEN;
 
-if (config.token === "setmeplease")
-    return console.log(
-        "Set your token up! Go to https://www.discordapp.com/developers and generate a token from a bot user."
-    );
+const PORT = process.env.PORT || 8080;
 
 fs.readdir("./commands/", (err, files) => {
     if (err) console.log(err);
@@ -32,6 +29,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
     console.log(bot.user.username + " is online.");
+    // console.log(process.env.TOKEN);
 });
 
 bot.on("message", async (message) => {
@@ -48,9 +46,9 @@ bot.on("message", async (message) => {
     if (commandfile) commandfile.run(bot, message, args);
 });
 
-bot.login(config.token);
+bot.login(token);
 
-app.set('view engine', 'html');
+app.set("view engine", "html");
 
 app.listen(PORT, () => {
     console.log(`Server running at port: ${PORT}`);
