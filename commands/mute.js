@@ -20,6 +20,9 @@ module.exports.run = async (bot, message, args) => {
     if (tomute.roles.some((role) => role.name === "Moderator"))
         return message.reply("Can't mute him!");
 
+    let reason = args[2];
+    if (!reason) reason = "No reason given";
+
     let mutetime = args[1];
     if (!mutetime) return message.reply("You didn't specify a time!");
 
